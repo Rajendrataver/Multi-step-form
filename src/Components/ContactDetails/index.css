@@ -1,0 +1,8 @@
+.contact-details .input-item .input-fields{
+    position: relative;
+}
+.contact-details .input-item .input-fields .icon{
+position: absolute;
+    top: 25%;
+    right: -18px;
+}

@@ -1,0 +1,19 @@
+.input-container {
+    position: relative;
+}
+.input-container input {
+    width: 94%;
+    font-family: 'DM Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 20px;
+      color: #6F6C90;
+}
+
+.input-container button {
+    position: absolute;
+    top: 12px;
+    right: 0px;
+    padding: 10px;
+}
