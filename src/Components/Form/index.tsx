@@ -41,41 +41,41 @@ const Form = () => {
        setCompany('');
   }
     const nextStep = ():void =>{
-        // if (!name.length) {
-        //   return setNameError('Enter Name')
-        // }
-        // if (!email.length) {
-        //     setNameError('')
-        //     return setEmailError('Enter Email')
-        // }
-        // if (!mobile.length) {
-        //     setEmailError('')
-        //     return setMobileError('Enter Mobile')
-        // }
-        // if (!company.length) {
-        //     setMobileError('')
-        //     return setCompanyError('Enter Company')
-        // } if (step===1&&company.length) {
-        //     setCompanyError('');
-        //     setNameError('')
-        //     setMobileError('')
-        //     setEmailError('')
-        //      return setStep(step + 1);
-        // }
-        // if (!service.length) {
-        //   return   setServiceError('Select Service')
-        // }
-        // if (step === 2&&service.length) {
-        //     setServiceError(' ')
-        //     return setStep(step+1);
-        // }
-        // if (!budget.length) {
-        //   return   setBudgetError('Select Budget')
-        // }
-        // if (step === 3&&budget.length) {
-        //     setStep(step+1)
-        //     return setBudgetError('');
-        // }
+        if (!name.length) {
+          return setNameError('Enter Name')
+        }
+        if (!email.length) {
+            setNameError('')
+            return setEmailError('Enter Email')
+        }
+        if (!mobile.length) {
+            setEmailError('')
+            return setMobileError('Enter Mobile')
+        }
+        if (!company.length) {
+            setMobileError('')
+            return setCompanyError('Enter Company')
+        } if (step===1&&company.length) {
+            setCompanyError('');
+            setNameError('')
+            setMobileError('')
+            setEmailError('')
+             return setStep(step + 1);
+        }
+        if (!service.length) {
+          return   setServiceError('Select Service')
+        }
+        if (step === 2&&service.length) {
+            setServiceError(' ')
+            return setStep(step+1);
+        }
+        if (!budget.length) {
+          return   setBudgetError('Select Budget')
+        }
+        if (step === 3&&budget.length) {
+            setStep(step+1)
+            return setBudgetError('');
+        }
          setStep(step+1)    
     }
 
