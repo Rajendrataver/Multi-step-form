@@ -3,6 +3,18 @@
 }
 .contact-details .input-item .input-fields .icon{
 position: absolute;
-    top: 25%;
+    top: 40%;
     right: -18px;
+}
+
+.contact-details .input-item .input-fields span{
+    margin: 10px 0 0 15px;
+}
+@media (max-width:680px) {
+    .contact-details .input-item {
+            margin-top: 0;
+    }
+        .contact-details .input-fields-container {
+            gap:10px;
+        }
 }

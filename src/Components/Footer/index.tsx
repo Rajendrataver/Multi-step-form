@@ -8,6 +8,7 @@ const Footer = () => {
                     <img src="./assets/images/Logo.png" alt="" />
                     <p>Copyright © 2021 BRIX Templates | All Rights Reserved</p>
                 </div>
+                
                 <div className="mail-box">
                     <Input/>
                 </div>

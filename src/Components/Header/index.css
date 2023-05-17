@@ -2,7 +2,19 @@
     display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-wrap: wrap ;
+}
+.logo{
+    max-width: 300px;
+}
+.logo img{
+    width: width 100%;;
 }
 header{
     padding: 32px 0;
+}
+@media (max-width:500px) {
+    header .links {
+            margin-top: 30px;
+        }
 }

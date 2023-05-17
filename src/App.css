@@ -1,7 +1,7 @@
 .container {
   max-width: 1240px;
   margin: 0 auto;
-  padding: 0 15px;
+  padding: 0 10px;
 }
 
 h1,
@@ -111,4 +111,7 @@ form label {
   font-size: 18px;
   line-height: 20px;
   color: #170F49;
+}
+.error{
+      color: #9d0a0ad9;
 }
