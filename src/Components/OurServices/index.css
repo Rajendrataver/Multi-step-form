@@ -3,6 +3,7 @@ input:checked+label {
 }
 .service-details .input-fields-container{
   justify-content: center;
+  padding-top: 20px;
 }
 .service-details label{
     border: 1px solid transparent;
@@ -33,6 +34,11 @@ input:checked+label {
     background: #4a3aff2f;;
         border-radius: 180px;
         margin: 15px;
+        
+}
+.service-details span.error{
+    position: absolute;
+    margin-left: 20px;
 }
 .service-details label span img{
     width: 37px;

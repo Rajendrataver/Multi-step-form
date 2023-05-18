@@ -8,12 +8,20 @@ position: absolute;
 }
 
 .contact-details .input-item .input-fields span{
-    margin: 10px 0 0 15px;
+    
+        position: absolute;
+        bottom: -23px;
+        left: 25px;
+}
+.contact-details .input-item{
+
+    margin-top: 20px;
 }
 @media (max-width:680px) {
-    .contact-details .input-item {
-            margin-top: 0;
-    }
+        .contact-details .input-item {
+        
+                margin-top: 20px;
+            }
         .contact-details .input-fields-container {
             gap:10px;
         }

@@ -15,10 +15,17 @@
         max-width: 285px;
 }
 .budget-details .input-fields-container {
+position: relative;
+    padding-top: 20px;  
     justify-content: center;
+   
 }
 .budget-details input[type=radio] {
    position: absolute;
    top: 41%;
    left: 8%;
+}
+.budget-details  span.error{
+    position: absolute;
+        margin-left: 20px
 }
