@@ -1,0 +1,10 @@
+.submit-details .input-fields-container{
+    justify-content: center;
+   
+}
+.submit-details .input-fields-container button{
+ margin-top: 20px;
+}
+.submit-success img{
+  width: 100%;
+}

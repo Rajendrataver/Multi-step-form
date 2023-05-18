@@ -1,0 +1,85 @@
+.marketing-section{
+    padding-top: 170px;
+       
+}
+.marketing-part-1{
+    background: linear-gradient(90deg, #4A3AFF 0%, #6D3AFF 100%);
+    max-width: 600px;
+    width: 100%;
+    padding-top: 85px;
+    border-radius: 35px;
+}
+.marketing-part-2{
+    background:white;
+        max-width: 600px;
+        width: 100%;
+        padding-top: 85px;
+        border: 1px solid #EFF0F7;
+        border-radius: 35px;
+}
+
+.marketing-section .logo{
+    max-width: 300px;
+}
+.marketing-section .details{
+    max-width: 481px;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+.marketing-part-1 .details h4{
+   text-align: left;
+   margin-top: 20px;
+   color: white;
+}
+.marketing-part-2 .details h4 {
+    text-align: left;
+    margin-top: 20px;
+    
+}
+.marketing-part-1 .details p {
+    text-align: left;
+    color: #bfbfbf;
+    line-height: 30px;
+    margin-top: 10px;
+    font-weight: 0;
+}
+.marketing-part-1 .details button {
+   
+    color:#4A3AFF ;
+    text-decoration: underline 2px;
+    background-color: white;
+}
+.marketing-part-2 .details p {
+    text-align: left;
+    line-height: 30px;
+    margin-top: 10px;
+    font-weight: 0;
+}
+
+.marketing-part-2 .details button {
+    text-decoration: underline 2px;
+    background-color: #FF2D46;
+    color: white;
+}
+.marketing-section .marketing-image .img {
+   width: 100%;
+}
+.marketing-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.marketing-section .marketing-image .img img{
+    border-radius: 35px;
+    width: 100% !important;
+    margin-bottom: -4px;
+}
+.img{
+    max-width:100%;
+}
+.marketing-image img{
+    width: 100%;
+    max-width: 100% ;
+}
+
