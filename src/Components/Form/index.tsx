@@ -1,20 +1,59 @@
 import './index.css'
 import Stepper from '../Stepper';
 import ContactDetails from '../ContactDetails';
-import { useReducer, useRef, useState } from 'react';
+import { createContext, useState } from 'react';
 import OurServices from '../OurServices';
 import Budget from '../Budget';
 import Submit from '../Submit';
+import { VoidExpression } from 'typescript';
 
+interface form{
+    step:number
+    name: string,
+    email: string,
+    mobile: string,
+    company: string,
+    budget: string,
+    service:string,
+    nameError: string
+    emailError: string,
+    mobileError: string,
+    companyError: string,
+    budgetError: string,
+    serviceError: string,
+    setName: (value: string) => void
+    setEmail: (value: string) => void
+    setMobile: (value: string) => void
+    setCompany: (value: string) => void
+    setService: (value: string) => void
+    setBudget:(value:string)=>void
+}
+const details = {
+    setName: (value: string) => { },
+    setEmail: (value:string) => { },
+    setMobile: (value:string) => { },
+    setCompany: (value:string) => { },
+    setService: (value: string) => { },
+    setBudget: (value:string) => { },
+    step:1,
+    name: '',
+    email: '',
+    mobile: '',
+    company: '',
+    budget: '',
+    service: '',
+    budgetError: '',
+    serviceError:'',
+    nameError: '',
+    emailError: '',
+    mobileError: '',
+    companyError: '',
+}
+const formContext = createContext<form>(details);
 
 const Form = () => {
     const [step, setStep] = useState<number>(1);
-    const steps:string[] = [
-        'Contact Details',
-        'Our Services',
-        "What's Your Project Budget ?",
-        "Submit"
-    ]
+    
     const [name, setName] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [mobile, setMobile] = useState<string>('');
@@ -27,6 +66,28 @@ const Form = () => {
     const [companyError, setCompanyError] = useState<string>('');
     const [budgetError, setBudgetError] = useState<string>(' ');
     const [serviceError, setServiceError] = useState<string>(' ');
+    
+
+    const data = {
+        setName,
+        setBudget,
+        setCompany,
+        setEmail, setService,
+        setMobile,
+    step,
+    name,
+    email,
+    mobile,
+    company,
+    budget,
+    service,
+    nameError,
+    emailError,
+    mobileError,
+    companyError,
+    budgetError,
+    serviceError
+    }
     
    const handleSubmit=(event:any):void => {
        event.preventDefault();
@@ -88,25 +149,27 @@ const Form = () => {
                  <div className="form-container">
                     <h2>Get a project quote</h2>
                     <p>Please fill the form below to receive a quote for your project. Feel free to add as much detail as needed.</p>
+                    <formContext.Provider value={data}>
                     <div className='form'>
-                        <Stepper step={step} />
+                        <Stepper/>
                         <hr />
                         <form onSubmit={handleSubmit}>
                             {
-                                step === 1 && <ContactDetails nameError={nameError} emailError = { emailError } mobileError = {mobileError} companyError={companyError}  mobile={mobile} company={company} name={name} email={email} setMobile={ e=>setMobile(e.target.value)} setCompany={e=>setCompany(e.target.value)} setName={e => setName(e.target.value)}  setEmail={e=>setEmail(e.target.value)}  />
+                                step === 1 && <ContactDetails/>
                             }  
 
                             {
-                                step === 2 && <OurServices serviceError={serviceError} service={service} setService={e=>setService(e.target.value)} />
+                                step === 2 && <OurServices />
                             }  
                             {
-                                step === 3 && <Budget budgetError={ budgetError}  budget={budget} setBudget={ e=>setBudget(e.target.value)} />
+                                step === 3 && <Budget  />
                             }  
                             {
                                 step === 4 && <Submit />
                             }  
                         </form>
                     </div>
+                    </formContext.Provider>
                     <div className='action-buttons'>
                         {
                           step!==1&&  <button className='btn outline preview' onClick={previousStep}>Previous step</button>
@@ -122,5 +185,5 @@ const Form = () => {
         </section>
     </>);
 }
- 
+export {formContext}
 export default Form;

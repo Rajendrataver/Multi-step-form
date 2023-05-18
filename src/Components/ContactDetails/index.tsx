@@ -1,24 +1,9 @@
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { formContext } from '../Form';
 import './index.css';
-
-interface contactInterface{
-  name: string,
-  email: string,
-  mobile: string,
-  company: string,
-  nameError:string
-  emailError: string
-  mobileError: string
-  companyError:string
-  setEmail: (e: any) => void,
-  setMobile: (e: any) => void,
-  setCompany: (e: any) => void,
-  setName: (e: any) => void
-
-}
-
-const ContactDetails = ({ name,email,mobile,company,nameError,emailError,mobileError,companyError,setMobile,setCompany, setEmail,setName}:contactInterface ) => {
+const ContactDetails = () => {
+  const form = useContext(formContext);
   return (<>
         <div className="contact-details">
             <h4>Contact details</h4>
@@ -27,32 +12,32 @@ const ContactDetails = ({ name,email,mobile,company,nameError,emailError,mobileE
                 <div className="input-item">
                   <label htmlFor="name">Name</label>
                    <div className="input-fields">
-                    <input type="text" placeholder="Enter your name" value={name} onChange={e => { setName(e) }} />
-                      <span className='error'>{nameError }</span>
+                    <input type="text" placeholder="Enter your name" value={form.name} onChange={e => form.setName(e.target.value) } />
+                      <span className='error'>{form.nameError}</span>
                         <img src="assets/images/user-icon.png" alt="" className="icon" />
                    </div>
                 </div>  
                  <div className="input-item">
                   <label htmlFor="name">Email </label>
                     <div className="input-fields">
-                        <input type="text" placeholder="Email address" value={email} onChange={ e=>setEmail(e)} />
-                        <span className='error'>{emailError }</span>            
+                        <input type="text" placeholder="Email address" value={form.email} onChange={ e=>form.setEmail(e.target.value)} />
+                        <span className='error'>{form.emailError }</span>            
                          <img src="assets/images/mail.png" alt="" className="icon" />
                    </div>
                 </div>
                 <div className="input-item">
                   <label htmlFor="name">Phone Number</label>
                     <div className="input-fields">
-                        <input type="text" placeholder="Phone number" value={mobile} onChange={ e=>setMobile(e)}/>
-                        <span className='error'>{mobileError }</span>
+                        <input type="text" placeholder="Phone number" value={form.mobile} onChange={ e=>form.setMobile(e.target.value)}/>
+                        <span className='error'>{form.mobileError }</span>
             <img src="assets/images/phone.png" alt="" className="icon" />
                    </div>
                 </div>
                 <div className="input-item">
                   <label htmlFor="name">Company</label>
                     <div className="input-fields">
-                        <input type="text" placeholder="Company name" value={company} onChange={ e=>setCompany(e)}/>
-            <span className='error'>{companyError }</span>            
+                        <input type="text" placeholder="Company name" value={form.company} onChange={ e=>form.setCompany(e.target.value)}/>
+            <span className='error'>{form.companyError }</span>            
             <img src="assets/images/company.png" alt="" className="icon" />
                    </div>
                 </div>
